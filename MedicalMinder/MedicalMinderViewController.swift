@@ -1,6 +1,6 @@
 //
-//  HomeView.swift
-//  MedicalMinder
+//  MedicalMinderViewController.swift
+//  MedicalMinderViewController
 //
 //  Created by Derrick Price on 9/4/16.
 //  Copyright © 2016 DLP. All rights reserved.
@@ -10,7 +10,7 @@
 import UIKit
 import CoreData
 
-class MedicalMinderView: UIViewController {
+class MedicalMinderViewController: UIViewController {
     
     var selectedUser: UserInfo!
     

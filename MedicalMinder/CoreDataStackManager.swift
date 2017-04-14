@@ -109,7 +109,6 @@ class CoreDataStackManager {
     func saveContext () {
         if managedObjectContext.hasChanges {
             do {
-                print ("Save the context")
                 
                 try managedObjectContext.save()
             } catch {

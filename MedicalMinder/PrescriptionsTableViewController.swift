@@ -24,7 +24,7 @@ class PrescriptionsTableViewController: UITableViewController {
             self.navigationItem.title! +=  (" - " + user.name)
         }
         else {
-         self.navigationItem.title = "Prescriptions"
+            self.navigationItem.title = "Prescriptions"
         }
     }
     
@@ -39,12 +39,6 @@ class PrescriptionsTableViewController: UITableViewController {
         DispatchQueue.main.async {
             
             self.prescriptions = self.fetchAllPrescriptions()
-//            for med in self.prescriptions {
-//                
-//                print ("There is a reading \(med.name) \\ \(med.dosageNumber), \(med.dosageUnits), \(med.dosageFrequency)")
-//            }
-//            
-//            print ("There are \(self.prescriptions.count) prescriptions on will appear after fetch")
             
             // retrieve the prescriptions stored in context and update the appdelegate
             let object = UIApplication.shared.delegate
@@ -67,7 +61,6 @@ class PrescriptionsTableViewController: UITableViewController {
     // Retrieve the cached prescriptions
     func fetchAllPrescriptions() -> [Prescription] {
         
-//        print ("Call fetchAllPrescriptions!!\n\n")
         // Create the Fetch Request
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Prescription")
         //fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
@@ -89,9 +82,7 @@ class PrescriptionsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PrescriptionsTableCell", for: indexPath) as! PrescriptionTableViewCell
         let prescription = self.prescriptions[indexPath.row]
         
-//        print ("Tableview at cell row at index path")
-        
-  //      cell.medicineImageView.image = UIImage(named: "medicineFrame")
+        //      cell.medicineImageView.image = UIImage(named: "medicineFrame")
         cell.medicineNameLabel!.text = prescription.name
         cell.medicineDosageLabel!.text = (prescription.dosageNumber.description) + " " + (prescription.dosageUnits?.lowercased())! + " every " + (prescription.dosageFrequency.description) + " hours " + (prescription.dosagePerDay.description) + " times per day"
         
@@ -104,7 +95,7 @@ class PrescriptionsTableViewController: UITableViewController {
         let controller = storyboard!.instantiateViewController(withIdentifier: "PrescriptionDetailStoryboardID") as! PrescriptionDetailViewController
         
         controller.medicalName = prescription.name
-
+        
         if prescription.overview != nil {
             controller.medicalOverview = prescription.overview
         }
@@ -135,7 +126,8 @@ class PrescriptionsTableViewController: UITableViewController {
     
     @IBAction func editTable(_ sender: UIBarButtonItem)
     {
-        setEditing(true, animated: true)
+        
+        setEditing(!self.isEditing, animated: true)
     }
     
     

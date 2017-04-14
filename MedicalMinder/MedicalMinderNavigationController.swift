@@ -6,4 +6,15 @@
 //  Copyright © 2017 DLP. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+// Create the Navigation Controller class to prevent the orientation rotation
+class NavigationController: UINavigationController {
+    
+    override var shouldAutorotate: Bool {
+        return false
+    }
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return .portrait
+    }
+}

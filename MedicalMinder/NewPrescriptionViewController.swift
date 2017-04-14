@@ -11,13 +11,15 @@ import CoreData
 
 class NewPrescriptionViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var NameTextField: UITextField!
-    @IBOutlet weak var DosageNumTextField: UITextField!
-    @IBOutlet weak var UnitsTextField: UITextField!
-    @IBOutlet weak var FrequencyTextField: UITextField!
-    @IBOutlet weak var StartingDate: UIDatePicker!
-    @IBOutlet weak var FrequencyPerDayTextField: UITextField!
-    @IBOutlet weak var PrescribingDoctorTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var dosageNumTextField: UITextField!
+    @IBOutlet weak var unitsTextField: UITextField!
+    @IBOutlet weak var frequencyTextField: UITextField!
+    @IBOutlet weak var frequencyPerDayTextField: UITextField!
+    @IBOutlet weak var startingDate: UIDatePicker!
+    @IBOutlet weak var prescribingDoctorTextField: UITextField!
+    @IBOutlet weak var statusIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var saveButton: UIButton!
     
     var selectedUser : UserInfo?
     
@@ -28,8 +30,10 @@ class NewPrescriptionViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         // Set up the text field delegate to only allow numbers
-        DosageNumTextField.delegate = self
-        FrequencyTextField.delegate = self
+        dosageNumTextField.delegate = self
+        frequencyTextField.delegate = self
+        
+        statusIndicator.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -39,10 +43,9 @@ class NewPrescriptionViewController: UIViewController, UITextFieldDelegate {
     // Force only numbers in the text field
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        // Can I limit the number of characters to be entered by the user to 3 digits?
+        // TODO: Can I limit the number of characters to be entered by the user to 3 digits?
         let invalidCharacters = CharacterSet(charactersIn: "0123456789").inverted
         //        let character_len = textField.text?.characters.count
-        //        print ("The character_len = \(character_len)")
         
         return string.rangeOfCharacter(from: invalidCharacters, options: [], range: string.startIndex..<string.endIndex) == nil
         //        return string.rangeOfCharacter(from: invalidCharacters, options: [], range: string.characters.indices) == nil
@@ -54,40 +57,57 @@ class NewPrescriptionViewController: UIViewController, UITextFieldDelegate {
     lazy var sharedContext: NSManagedObjectContext =  {
         
         return CoreDataStackManager.sharedInstance().managedObjectContext
-        }()
+    }()
     
     func saveContext() {
         CoreDataStackManager.sharedInstance().saveContext()
     }
     
     @IBAction func saveSettings(_ sender: UIButton) {
-
+        
         var med_overview = "Nothing right now"
         
         DispatchQueue.main.async {
-            // Get the description of the medicine
-            WebConnectionClient.sharedInstance().getMedicalDescription(self.NameTextField.text!) { (success, overview, errorString) in
-                if (!success) {
-                    med_overview = "No additional information found"
-                }
-                else
-                {
-                    med_overview = overview!
-                }
-                print ("Got overview: \(med_overview)")
+            self.statusIndicator.isHidden = false
+            self.statusIndicator.startAnimating()
+        }
+        
+        // Get the description of the medicine
+        WebConnectionClient.sharedInstance().getMedicalDescription(self.nameTextField.text!) { (success, overview, errorString) in
+            
+            DispatchQueue.main.async {
+                // End animation of status indicator
+                self.statusIndicator.isHidden = true
+                self.statusIndicator.stopAnimating()
+            }
+            
+            if (!success) {
+                med_overview = "No additional information found"
+            }
+            else {
+                med_overview = overview!
+            }
+            
+            if errorString != nil {
+                
+                // Alert the user to the error
+                self.showAlertMessage (error_title: "Could not Lookup Medical Info", error_message: errorString!)
+                
+            } else {
                 
                 let scriptDictionary: [String : AnyObject] = [
-                    Prescription.Keys.Name : self.NameTextField.text! as AnyObject,
-                    Prescription.Keys.DosageNumber : self.DosageNumTextField.text! as AnyObject,
-                    Prescription.Keys.DosageFrequency : self.FrequencyTextField.text! as AnyObject,
-                    Prescription.Keys.DosagePerDay : self.FrequencyPerDayTextField.text! as AnyObject,
-                    Prescription.Keys.StartDate : self.StartingDate,
-                    Prescription.Keys.DosageUnits : self.UnitsTextField.text! as AnyObject,
-                    Prescription.Keys.Doctor : self.PrescribingDoctorTextField.text! as AnyObject,
+                    Prescription.Keys.Name : self.nameTextField.text! as AnyObject,
+                    Prescription.Keys.DosageNumber : self.dosageNumTextField.text! as AnyObject,
+                    Prescription.Keys.DosageFrequency : self.frequencyTextField.text! as AnyObject,
+                    Prescription.Keys.DosagePerDay : self.frequencyPerDayTextField.text! as AnyObject,
+                    Prescription.Keys.StartDate : self.startingDate,
+                    Prescription.Keys.DosageUnits : self.unitsTextField.text! as AnyObject,
+                    Prescription.Keys.Doctor : self.prescribingDoctorTextField.text! as AnyObject,
                     Prescription.Keys.Overview : med_overview  as AnyObject
                 ]
                 // Now we create a new prescription and save using the shared Context
                 let newMed = Prescription(dictionary: scriptDictionary, context: self.sharedContext)
+                
                 if self.selectedUser != nil {
                     // Set patient data
                     newMed.patient = self.selectedUser
@@ -100,10 +120,11 @@ class NewPrescriptionViewController: UIViewController, UITextFieldDelegate {
                 
                 // Save the settings and exit
                 CoreDataStackManager.sharedInstance().saveContext()
-                // Close this view
-                DispatchQueue.main.async {
-                    _ = self.navigationController?.popViewController(animated: true)
-                }
+            }
+            
+            // Close this view
+            DispatchQueue.main.async {
+                _ = self.navigationController?.popViewController(animated: true)
             }
         }
     }
@@ -115,22 +136,32 @@ class NewPrescriptionViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func getDateTime() -> (time: String, date: String) {
+    // Make sure user has entered the required fields
+    @IBAction func checkValidFieldEntries(_ sender: UITextField) {
         
-        let formatter = DateFormatter()
-        //formatter.timeStyle = NSTimeF
-        formatter.dateStyle = DateFormatter.Style.medium
+        guard let medname = nameTextField.text, !medname.isEmpty,
+            let dosagenum = dosageNumTextField.text, !dosagenum.isEmpty,
+            let dosagefreq = frequencyTextField.text, !dosagefreq.isEmpty,
+            let dosageperday = frequencyPerDayTextField.text, !dosageperday.isEmpty
+            else {
+                saveButton.isEnabled = false
+                return
+        }
         
-        let currentDateTime = Date()
-        let calendar = Calendar.current
-        let components = (calendar as NSCalendar).components([.hour,.minute,.second], from: currentDateTime)
-        let hour = components.hour
-        let min = components.minute
-        let sec = components.second
+        // Enable Save if textfields are not empty
+        saveButton.isEnabled = true
+    }
+    
+    func showAlertMessage (error_title: String, error_message: String) {
         
-        formatter.dateFormat = "MMMM dd, yyyy"
-        let convertedDate = formatter.string(from: currentDateTime)
-        
-        return ("\(hour):\(min):\(sec)", convertedDate)
+        //simple alert dialog
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: error_title, message: error_message, preferredStyle: UIAlertControllerStyle.alert);
+            self.saveButton.isEnabled = false
+            // Add a cancel action to the Alert
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel, handler: nil));
+            //show the Alert
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 }

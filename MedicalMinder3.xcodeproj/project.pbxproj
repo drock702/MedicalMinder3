@@ -23,14 +23,13 @@
 		4A7270B21D656BC800F9A457 /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7270B11D656BC800F9A457 /* CoreDataStackManager.swift */; };
 		4A7270B71D65714E00F9A457 /* BloodPressure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7270B61D65714E00F9A457 /* BloodPressure.swift */; };
 		4A7270BB1D65716F00F9A457 /* Prescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7270BA1D65716F00F9A457 /* Prescription.swift */; };
-		4A7270BD1D6577AD00F9A457 /* MedicMinderConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7270BC1D6577AD00F9A457 /* MedicMinderConstants.swift */; };
 		4A8A163B1E51732E00EBD13A /* PrescriptionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8A163A1E51732E00EBD13A /* PrescriptionDetailViewController.swift */; };
+		4AB9358B1E668B2800EF461A /* MedicalMinderNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB9358A1E668B2800EF461A /* MedicalMinderNavigationController.swift */; };
 		4ADA9B4A1DCAECC2008E3E6D /* NewPrescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADA9B491DCAECC2008E3E6D /* NewPrescriptionViewController.swift */; };
 		4AE632661E45C08200FB85D1 /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE632651E45C08200FB85D1 /* UserInformationViewController.swift */; };
 		4AE632681E45C0E400FB85D1 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE632671E45C0E400FB85D1 /* UserInfo.swift */; };
 		4AFBDBAA1D7697AA00EDD984 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 4AFBDBA91D7697AA00EDD984 /* README */; };
-		4AFBDBAC1D7D31AD00EDD984 /* MedicalMinderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFBDBAB1D7D31AD00EDD984 /* MedicalMinderView.swift */; };
-		4AFBDBAE1D7D39F100EDD984 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFBDBAD1D7D39F100EDD984 /* ViewController.swift */; };
+		4AFBDBAC1D7D31AD00EDD984 /* MedicalMinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFBDBAB1D7D31AD00EDD984 /* MedicalMinderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,14 +72,13 @@
 		4A7270B11D656BC800F9A457 /* CoreDataStackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
 		4A7270B61D65714E00F9A457 /* BloodPressure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloodPressure.swift; sourceTree = "<group>"; };
 		4A7270BA1D65716F00F9A457 /* Prescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prescription.swift; sourceTree = "<group>"; };
-		4A7270BC1D6577AD00F9A457 /* MedicMinderConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicMinderConstants.swift; sourceTree = "<group>"; };
 		4A8A163A1E51732E00EBD13A /* PrescriptionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrescriptionDetailViewController.swift; sourceTree = "<group>"; };
+		4AB9358A1E668B2800EF461A /* MedicalMinderNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicalMinderNavigationController.swift; sourceTree = "<group>"; };
 		4ADA9B491DCAECC2008E3E6D /* NewPrescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPrescriptionViewController.swift; sourceTree = "<group>"; };
 		4AE632651E45C08200FB85D1 /* UserInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformationViewController.swift; sourceTree = "<group>"; };
 		4AE632671E45C0E400FB85D1 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		4AFBDBA91D7697AA00EDD984 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
-		4AFBDBAB1D7D31AD00EDD984 /* MedicalMinderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicalMinderView.swift; sourceTree = "<group>"; };
-		4AFBDBAD1D7D39F100EDD984 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4AFBDBAB1D7D31AD00EDD984 /* MedicalMinderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicalMinderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,12 +139,12 @@
 				4A72708A1D62DAA800F9A457 /* Info.plist */,
 				4A7270821D62DAA800F9A457 /* MedicalMinderModel.xcdatamodeld */,
 				4AFBDBA91D7697AA00EDD984 /* README */,
-				4AFBDBAB1D7D31AD00EDD984 /* MedicalMinderView.swift */,
-				4AFBDBAD1D7D39F100EDD984 /* ViewController.swift */,
+				4AFBDBAB1D7D31AD00EDD984 /* MedicalMinderViewController.swift */,
 				4A2E8BF01D890FDE00258B87 /* PrescriptionsTableViewController.swift */,
 				4A05D1D71D92293700CCE1E1 /* PrescriptionTableViewCell.swift */,
 				4A2E8BF21D8BAEAF00258B87 /* BloodPressureTableCell.swift */,
 				4A2E8BF61D8BB91800258B87 /* BloodPressureTableViewController.swift */,
+				4AB9358A1E668B2800EF461A /* MedicalMinderNavigationController.swift */,
 			);
 			name = MedicalMinder3;
 			path = MedicalMinder;
@@ -177,7 +175,6 @@
 			children = (
 				4A7270B61D65714E00F9A457 /* BloodPressure.swift */,
 				4A7270BA1D65716F00F9A457 /* Prescription.swift */,
-				4A7270BC1D6577AD00F9A457 /* MedicMinderConstants.swift */,
 				4AE632671E45C0E400FB85D1 /* UserInfo.swift */,
 			);
 			name = "DB Files";
@@ -341,10 +338,10 @@
 				4A2E8BF71D8BB91800258B87 /* BloodPressureTableViewController.swift in Sources */,
 				4ADA9B4A1DCAECC2008E3E6D /* NewPrescriptionViewController.swift in Sources */,
 				4A2E8BF31D8BAEAF00258B87 /* BloodPressureTableCell.swift in Sources */,
-				4AFBDBAE1D7D39F100EDD984 /* ViewController.swift in Sources */,
 				4A05D1D81D92293700CCE1E1 /* PrescriptionTableViewCell.swift in Sources */,
-				4AFBDBAC1D7D31AD00EDD984 /* MedicalMinderView.swift in Sources */,
+				4AFBDBAC1D7D31AD00EDD984 /* MedicalMinderViewController.swift in Sources */,
 				4A72707C1D62DAA800F9A457 /* AppDelegate.swift in Sources */,
+				4AB9358B1E668B2800EF461A /* MedicalMinderNavigationController.swift in Sources */,
 				4A8A163B1E51732E00EBD13A /* PrescriptionDetailViewController.swift in Sources */,
 				4A7270BB1D65716F00F9A457 /* Prescription.swift in Sources */,
 				4A7270B71D65714E00F9A457 /* BloodPressure.swift in Sources */,
@@ -352,7 +349,6 @@
 				4A7270841D62DAA800F9A457 /* MedicalMinderModel.xcdatamodeld in Sources */,
 				4A2E8BF11D890FDE00258B87 /* PrescriptionsTableViewController.swift in Sources */,
 				4A722C6B1E33037F0090AAFD /* WebConnectionClient.swift in Sources */,
-				4A7270BD1D6577AD00F9A457 /* MedicMinderConstants.swift in Sources */,
 				4AE632661E45C08200FB85D1 /* UserInformationViewController.swift in Sources */,
 				4A5819EF1DB289A300C3941D /* NewBloodPressureViewController.swift in Sources */,
 			);

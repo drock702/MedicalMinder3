@@ -10,19 +10,23 @@ import UIKit
 import CoreData
 
 class NewBloodPressureViewController: UIViewController, UITextFieldDelegate {
-
+    
     // This class is used for the view that allows the user to enter a new blood pressure reading
     
     @IBOutlet weak var systolicText: UITextField!
     @IBOutlet weak var diastolicText: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var saveButton: UIButton!
     
     var user: UserInfo?
     
     // Usual setup
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        // Don't allow readings in the future
+        datePicker.maximumDate = NSDate () as Date
+        
         // Set up the text field delegate to only allow numbers
         systolicText.delegate = self
         diastolicText.delegate = self
@@ -33,25 +37,10 @@ class NewBloodPressureViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    // Get the UserInfo from the context
-    func fetchUserInfo() -> [UserInfo] {
-        
-        print ("Look for user information\n")
-        // Create the Fetch Request
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "UserInfo")
-        
-        // Execute the Fetch Request
-        do {
-            return try sharedContext.fetch(fetchRequest) as! [UserInfo]
-        } catch _ {
-            return [UserInfo]()
-        }
-    }
-
     // Core Data Convenience. This will be useful for fetching. And for adding and saving objects as well.
     lazy var sharedContext: NSManagedObjectContext =  {
         return CoreDataStackManager.sharedInstance().managedObjectContext
-        }()
+    }()
     
     func saveContext() {
         CoreDataStackManager.sharedInstance().saveContext()
@@ -62,13 +51,12 @@ class NewBloodPressureViewController: UIViewController, UITextFieldDelegate {
         
         // TODO: Limit the number of characters to be entered by the user to 3 digits?
         let invalidCharacters = CharacterSet(charactersIn: "0123456789").inverted
-//        let character_len = textField.text?.characters.count
-//        print ("The character_len = \(character_len)")
+        //        let character_len = textField.text?.characters.count
         
         return string.rangeOfCharacter(from: invalidCharacters, options: [], range: string.startIndex..<string.endIndex) == nil
-//        return string.rangeOfCharacter(from: invalidCharacters, options: [], range: string.characters.indices) == nil
-//        &&
-//        character_len < 3
+        //        return string.rangeOfCharacter(from: invalidCharacters, options: [], range: string.characters.indices) == nil
+        //        &&
+        //        character_len < 3
     }
     
     @IBAction func saveSettings(_ sender: UIButton) {
@@ -97,6 +85,18 @@ class NewBloodPressureViewController: UIViewController, UITextFieldDelegate {
         self.saveContext()
         
         _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func checkFieldsAreValid(_ sender: UITextField) {
+        
+        guard let systolic = systolicText.text, !systolic.isEmpty,
+            let diastolic = diastolicText.text, !diastolic.isEmpty
+            else {
+                saveButton.isEnabled = false
+                return
+            }
+        // Enable Save if textfields are not empty
+        saveButton.isEnabled = true
     }
     
     @IBAction func cancelSettings(_ sender: UIButton) {

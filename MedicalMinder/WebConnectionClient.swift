@@ -39,8 +39,7 @@ class WebConnectionClient : NSObject {
         let urlWithParams = scriptUrl + "?search=\(medicine_name!)"
         
         // Create NSURL Ibject
-        guard let myUrl = URL(string: urlWithParams) else
-        {
+        guard let myUrl = URL(string: urlWithParams) else {
             return
         }
         
@@ -58,23 +57,16 @@ class WebConnectionClient : NSObject {
             let default_result = "No description found"
             
             // Check for error
-            if error != nil
-            {
+            if error != nil {
                 print("error=\(error?.localizedDescription)")
 
                 completionHandler (false, default_result, error?.localizedDescription)
                 return
             }
             
-            // Print out response string
-//            _ = NSString(data: data!, encoding: NSUTF8StringEncoding)
-            
             // Convert server json response to NSDictionary
             do {
                 if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
-                    
-                    // Print out dictionary
-//                    print(convertedJsonIntoDict)
                     
                     guard (convertedJsonIntoDict.object(forKey: "error") == nil) else {
                         if let error_msg = convertedJsonIntoDict["error"] as? String {
@@ -91,25 +83,18 @@ class WebConnectionClient : NSObject {
                     
                     
                     let med_results = convertedJsonIntoDict.value(forKey: "results") as! NSArray
-                    //print ("The dictionary 'results'\n\n \(med_results)")
-                    
                     // Check for presence of description
                     guard ((med_results[0] as AnyObject).object(forKey: "description") != nil) else {
                         completionHandler (false, default_result, "Unable to get valid description.")
                         return
                     }
                     
-                    let desc_key = (med_results[0] as AnyObject).value(forKey: "description") as! NSArray
-                    //print ("The NSArray 'description'\n\n \(desc_key)")
-                    
+                    let desc_key = (med_results[0] as AnyObject).value(forKey: "description") as! NSArray                    
                     
                     guard let the_desc = desc_key[0] as? String else {
                         completionHandler (false, default_result, "Unable to get description.")
                         return
                     }
-                    
-                    //the_desc = desc_key[0] as! String
-                    //print ("\n Try again... 'description'\n\n \(the_desc)")
                     
                     completionHandler (true, the_desc, nil)
                     

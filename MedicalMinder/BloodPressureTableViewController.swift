@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class BloodPressureTableViewController: UITableViewController {
-
+    
     var bloodPressures = [BloodPressure]()
     var selectedUser : UserInfo?
     
@@ -39,10 +39,10 @@ class BloodPressureTableViewController: UITableViewController {
         let appDelegate = object as! AppDelegate
         bloodPressures = appDelegate.bloodPressures
         
-       DispatchQueue.main.async {
+        DispatchQueue.main.async {
             
             self.bloodPressures = self.fetchAllReadings()
-        
+            
             // retrieve the prescriptions stored in context and update the appdelegate
             let object = UIApplication.shared.delegate
             let appDelegate = object as! AppDelegate
@@ -61,7 +61,7 @@ class BloodPressureTableViewController: UITableViewController {
     // Core Data Convenience. This will be useful for fetching. And for adding and saving objects as well.
     lazy var sharedContext: NSManagedObjectContext =  {
         return CoreDataStackManager.sharedInstance().managedObjectContext
-        }()
+    }()
     
     func saveContext() {
         CoreDataStackManager.sharedInstance().saveContext()
@@ -69,10 +69,8 @@ class BloodPressureTableViewController: UITableViewController {
     
     func fetchAllReadings() -> [BloodPressure] {
         
-//        print ("Call fetchAllReadings!!\n\n")
         // Create the Fetch Request
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "BloodPressure")
-        //fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         
         // Execute the Fetch Request
         do {
@@ -107,12 +105,12 @@ class BloodPressureTableViewController: UITableViewController {
     }
     
     @IBAction func editTable(_ sender: UIBarButtonItem) {
-        setEditing(true, animated: true)
+        
+        
+        setEditing(!self.isEditing, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        
-//        print ("tableView(tableView: UITableView, commitEditingStyle) called")
         
         switch (editingStyle) {
         case .delete:
