@@ -1,0 +1,624 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4A05D1D81D92293700CCE1E1 /* PrescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A05D1D71D92293700CCE1E1 /* PrescriptionTableViewCell.swift */; };
+		4A2E8BF11D890FDE00258B87 /* PrescriptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E8BF01D890FDE00258B87 /* PrescriptionsTableViewController.swift */; };
+		4A2E8BF31D8BAEAF00258B87 /* BloodPressureTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E8BF21D8BAEAF00258B87 /* BloodPressureTableCell.swift */; };
+		4A2E8BF71D8BB91800258B87 /* BloodPressureTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2E8BF61D8BB91800258B87 /* BloodPressureTableViewController.swift */; };
+		4A5819EF1DB289A300C3941D /* NewBloodPressureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5819EE1DB289A300C3941D /* NewBloodPressureViewController.swift */; };
+		4A722C6B1E33037F0090AAFD /* WebConnectionClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A722C6A1E33037F0090AAFD /* WebConnectionClient.swift */; };
+		4A72707C1D62DAA800F9A457 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A72707B1D62DAA800F9A457 /* AppDelegate.swift */; };
+		4A7270811D62DAA800F9A457 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A72707F1D62DAA800F9A457 /* Main.storyboard */; };
+		4A7270841D62DAA800F9A457 /* MedicalMinderModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A7270821D62DAA800F9A457 /* MedicalMinderModel.xcdatamodeld */; };
+		4A7270861D62DAA800F9A457 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A7270851D62DAA800F9A457 /* Assets.xcassets */; };
+		4A7270891D62DAA800F9A457 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A7270871D62DAA800F9A457 /* LaunchScreen.storyboard */; };
+		4A7270941D62DAA900F9A457 /* MedicalMinder3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7270931D62DAA900F9A457 /* MedicalMinder3Tests.swift */; };
+		4A72709F1D62DAA900F9A457 /* MedicalMinder3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A72709E1D62DAA900F9A457 /* MedicalMinder3UITests.swift */; };
+		4A7270B21D656BC800F9A457 /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7270B11D656BC800F9A457 /* CoreDataStackManager.swift */; };
+		4A7270B71D65714E00F9A457 /* BloodPressure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7270B61D65714E00F9A457 /* BloodPressure.swift */; };
+		4A7270BB1D65716F00F9A457 /* Prescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7270BA1D65716F00F9A457 /* Prescription.swift */; };
+		4A7270BD1D6577AD00F9A457 /* MedicMinderConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7270BC1D6577AD00F9A457 /* MedicMinderConstants.swift */; };
+		4A8A163B1E51732E00EBD13A /* PrescriptionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8A163A1E51732E00EBD13A /* PrescriptionDetailViewController.swift */; };
+		4ADA9B4A1DCAECC2008E3E6D /* NewPrescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADA9B491DCAECC2008E3E6D /* NewPrescriptionViewController.swift */; };
+		4AE632661E45C08200FB85D1 /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE632651E45C08200FB85D1 /* UserInformationViewController.swift */; };
+		4AE632681E45C0E400FB85D1 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE632671E45C0E400FB85D1 /* UserInfo.swift */; };
+		4AFBDBAA1D7697AA00EDD984 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 4AFBDBA91D7697AA00EDD984 /* README */; };
+		4AFBDBAC1D7D31AD00EDD984 /* MedicalMinderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFBDBAB1D7D31AD00EDD984 /* MedicalMinderView.swift */; };
+		4AFBDBAE1D7D39F100EDD984 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFBDBAD1D7D39F100EDD984 /* ViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4A7270901D62DAA900F9A457 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A7270701D62DAA800F9A457 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A7270771D62DAA800F9A457;
+			remoteInfo = MedicalMinder;
+		};
+		4A72709B1D62DAA900F9A457 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A7270701D62DAA800F9A457 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A7270771D62DAA800F9A457;
+			remoteInfo = MedicalMinder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4A05D1D71D92293700CCE1E1 /* PrescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		4A2E8BF01D890FDE00258B87 /* PrescriptionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrescriptionsTableViewController.swift; sourceTree = "<group>"; };
+		4A2E8BF21D8BAEAF00258B87 /* BloodPressureTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloodPressureTableCell.swift; sourceTree = "<group>"; };
+		4A2E8BF61D8BB91800258B87 /* BloodPressureTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloodPressureTableViewController.swift; sourceTree = "<group>"; };
+		4A5819EE1DB289A300C3941D /* NewBloodPressureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBloodPressureViewController.swift; sourceTree = "<group>"; };
+		4A722C6A1E33037F0090AAFD /* WebConnectionClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebConnectionClient.swift; sourceTree = "<group>"; };
+		4A7270781D62DAA800F9A457 /* MedicalMinder3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedicalMinder3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A72707B1D62DAA800F9A457 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4A7270801D62DAA800F9A457 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4A7270831D62DAA800F9A457 /* MedicalMinderModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MedicalMinderModel.xcdatamodel; sourceTree = "<group>"; };
+		4A7270851D62DAA800F9A457 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4A7270881D62DAA800F9A457 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4A72708A1D62DAA800F9A457 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A72708F1D62DAA900F9A457 /* MedicalMinder3.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MedicalMinder3.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A7270931D62DAA900F9A457 /* MedicalMinder3Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalMinder3Tests.swift; sourceTree = "<group>"; };
+		4A7270951D62DAA900F9A457 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A72709A1D62DAA900F9A457 /* MedicalMinder3.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MedicalMinder3.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A72709E1D62DAA900F9A457 /* MedicalMinder3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalMinder3UITests.swift; sourceTree = "<group>"; };
+		4A7270A01D62DAA900F9A457 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A7270B11D656BC800F9A457 /* CoreDataStackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
+		4A7270B61D65714E00F9A457 /* BloodPressure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloodPressure.swift; sourceTree = "<group>"; };
+		4A7270BA1D65716F00F9A457 /* Prescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prescription.swift; sourceTree = "<group>"; };
+		4A7270BC1D6577AD00F9A457 /* MedicMinderConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicMinderConstants.swift; sourceTree = "<group>"; };
+		4A8A163A1E51732E00EBD13A /* PrescriptionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrescriptionDetailViewController.swift; sourceTree = "<group>"; };
+		4ADA9B491DCAECC2008E3E6D /* NewPrescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPrescriptionViewController.swift; sourceTree = "<group>"; };
+		4AE632651E45C08200FB85D1 /* UserInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformationViewController.swift; sourceTree = "<group>"; };
+		4AE632671E45C0E400FB85D1 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		4AFBDBA91D7697AA00EDD984 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		4AFBDBAB1D7D31AD00EDD984 /* MedicalMinderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicalMinderView.swift; sourceTree = "<group>"; };
+		4AFBDBAD1D7D39F100EDD984 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4A7270751D62DAA800F9A457 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A72708C1D62DAA900F9A457 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A7270971D62DAA900F9A457 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4A72706F1D62DAA800F9A457 = {
+			isa = PBXGroup;
+			children = (
+				4A72707A1D62DAA800F9A457 /* MedicalMinder3 */,
+				4A7270921D62DAA900F9A457 /* MedicalMinder3Tests */,
+				4A72709D1D62DAA900F9A457 /* MedicalMinder3UITests */,
+				4A7270791D62DAA800F9A457 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4A7270791D62DAA800F9A457 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4A7270781D62DAA800F9A457 /* MedicalMinder3.app */,
+				4A72708F1D62DAA900F9A457 /* MedicalMinder3.xctest */,
+				4A72709A1D62DAA900F9A457 /* MedicalMinder3.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4A72707A1D62DAA800F9A457 /* MedicalMinder3 */ = {
+			isa = PBXGroup;
+			children = (
+				4ADA9B4C1DD79EF8008E3E6D /* Helper Files */,
+				4ADA9B4B1DD79DBF008E3E6D /* User Input Views */,
+				4A7270B31D65711800F9A457 /* DB Files */,
+				4A72707B1D62DAA800F9A457 /* AppDelegate.swift */,
+				4A72707F1D62DAA800F9A457 /* Main.storyboard */,
+				4A7270851D62DAA800F9A457 /* Assets.xcassets */,
+				4A7270871D62DAA800F9A457 /* LaunchScreen.storyboard */,
+				4A72708A1D62DAA800F9A457 /* Info.plist */,
+				4A7270821D62DAA800F9A457 /* MedicalMinderModel.xcdatamodeld */,
+				4AFBDBA91D7697AA00EDD984 /* README */,
+				4AFBDBAB1D7D31AD00EDD984 /* MedicalMinderView.swift */,
+				4AFBDBAD1D7D39F100EDD984 /* ViewController.swift */,
+				4A2E8BF01D890FDE00258B87 /* PrescriptionsTableViewController.swift */,
+				4A05D1D71D92293700CCE1E1 /* PrescriptionTableViewCell.swift */,
+				4A2E8BF21D8BAEAF00258B87 /* BloodPressureTableCell.swift */,
+				4A2E8BF61D8BB91800258B87 /* BloodPressureTableViewController.swift */,
+			);
+			name = MedicalMinder3;
+			path = MedicalMinder;
+			sourceTree = "<group>";
+		};
+		4A7270921D62DAA900F9A457 /* MedicalMinder3Tests */ = {
+			isa = PBXGroup;
+			children = (
+				4A7270931D62DAA900F9A457 /* MedicalMinder3Tests.swift */,
+				4A7270951D62DAA900F9A457 /* Info.plist */,
+			);
+			name = MedicalMinder3Tests;
+			path = MedicalMinderTests;
+			sourceTree = "<group>";
+		};
+		4A72709D1D62DAA900F9A457 /* MedicalMinder3UITests */ = {
+			isa = PBXGroup;
+			children = (
+				4A72709E1D62DAA900F9A457 /* MedicalMinder3UITests.swift */,
+				4A7270A01D62DAA900F9A457 /* Info.plist */,
+			);
+			name = MedicalMinder3UITests;
+			path = MedicalMinderUITests;
+			sourceTree = "<group>";
+		};
+		4A7270B31D65711800F9A457 /* DB Files */ = {
+			isa = PBXGroup;
+			children = (
+				4A7270B61D65714E00F9A457 /* BloodPressure.swift */,
+				4A7270BA1D65716F00F9A457 /* Prescription.swift */,
+				4A7270BC1D6577AD00F9A457 /* MedicMinderConstants.swift */,
+				4AE632671E45C0E400FB85D1 /* UserInfo.swift */,
+			);
+			name = "DB Files";
+			sourceTree = "<group>";
+		};
+		4ADA9B4B1DD79DBF008E3E6D /* User Input Views */ = {
+			isa = PBXGroup;
+			children = (
+				4A5819EE1DB289A300C3941D /* NewBloodPressureViewController.swift */,
+				4ADA9B491DCAECC2008E3E6D /* NewPrescriptionViewController.swift */,
+				4AE632651E45C08200FB85D1 /* UserInformationViewController.swift */,
+				4A8A163A1E51732E00EBD13A /* PrescriptionDetailViewController.swift */,
+			);
+			name = "User Input Views";
+			sourceTree = "<group>";
+		};
+		4ADA9B4C1DD79EF8008E3E6D /* Helper Files */ = {
+			isa = PBXGroup;
+			children = (
+				4A7270B11D656BC800F9A457 /* CoreDataStackManager.swift */,
+				4A722C6A1E33037F0090AAFD /* WebConnectionClient.swift */,
+			);
+			name = "Helper Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4A7270771D62DAA800F9A457 /* MedicalMinder3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A7270A31D62DAA900F9A457 /* Build configuration list for PBXNativeTarget "MedicalMinder3" */;
+			buildPhases = (
+				4A7270741D62DAA800F9A457 /* Sources */,
+				4A7270751D62DAA800F9A457 /* Frameworks */,
+				4A7270761D62DAA800F9A457 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MedicalMinder3;
+			productName = MedicalMinder;
+			productReference = 4A7270781D62DAA800F9A457 /* MedicalMinder3.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4A72708E1D62DAA900F9A457 /* MedicalMinder3Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A7270A61D62DAA900F9A457 /* Build configuration list for PBXNativeTarget "MedicalMinder3Tests" */;
+			buildPhases = (
+				4A72708B1D62DAA900F9A457 /* Sources */,
+				4A72708C1D62DAA900F9A457 /* Frameworks */,
+				4A72708D1D62DAA900F9A457 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4A7270911D62DAA900F9A457 /* PBXTargetDependency */,
+			);
+			name = MedicalMinder3Tests;
+			productName = MedicalMinderTests;
+			productReference = 4A72708F1D62DAA900F9A457 /* MedicalMinder3.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4A7270991D62DAA900F9A457 /* MedicalMinder3UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A7270A91D62DAA900F9A457 /* Build configuration list for PBXNativeTarget "MedicalMinder3UITests" */;
+			buildPhases = (
+				4A7270961D62DAA900F9A457 /* Sources */,
+				4A7270971D62DAA900F9A457 /* Frameworks */,
+				4A7270981D62DAA900F9A457 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4A72709C1D62DAA900F9A457 /* PBXTargetDependency */,
+			);
+			name = MedicalMinder3UITests;
+			productName = MedicalMinderUITests;
+			productReference = 4A72709A1D62DAA900F9A457 /* MedicalMinder3.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4A7270701D62DAA800F9A457 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = DLP;
+				TargetAttributes = {
+					4A7270771D62DAA800F9A457 = {
+						CreatedOnToolsVersion = 7.0.1;
+						LastSwiftMigration = 0820;
+					};
+					4A72708E1D62DAA900F9A457 = {
+						CreatedOnToolsVersion = 7.0.1;
+						LastSwiftMigration = 0820;
+						TestTargetID = 4A7270771D62DAA800F9A457;
+					};
+					4A7270991D62DAA900F9A457 = {
+						CreatedOnToolsVersion = 7.0.1;
+						LastSwiftMigration = 0820;
+						TestTargetID = 4A7270771D62DAA800F9A457;
+					};
+				};
+			};
+			buildConfigurationList = 4A7270731D62DAA800F9A457 /* Build configuration list for PBXProject "MedicalMinder3" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4A72706F1D62DAA800F9A457;
+			productRefGroup = 4A7270791D62DAA800F9A457 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4A7270771D62DAA800F9A457 /* MedicalMinder3 */,
+				4A72708E1D62DAA900F9A457 /* MedicalMinder3Tests */,
+				4A7270991D62DAA900F9A457 /* MedicalMinder3UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4A7270761D62DAA800F9A457 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AFBDBAA1D7697AA00EDD984 /* README in Resources */,
+				4A7270891D62DAA800F9A457 /* LaunchScreen.storyboard in Resources */,
+				4A7270861D62DAA800F9A457 /* Assets.xcassets in Resources */,
+				4A7270811D62DAA800F9A457 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A72708D1D62DAA900F9A457 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A7270981D62DAA900F9A457 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4A7270741D62DAA800F9A457 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AE632681E45C0E400FB85D1 /* UserInfo.swift in Sources */,
+				4A2E8BF71D8BB91800258B87 /* BloodPressureTableViewController.swift in Sources */,
+				4ADA9B4A1DCAECC2008E3E6D /* NewPrescriptionViewController.swift in Sources */,
+				4A2E8BF31D8BAEAF00258B87 /* BloodPressureTableCell.swift in Sources */,
+				4AFBDBAE1D7D39F100EDD984 /* ViewController.swift in Sources */,
+				4A05D1D81D92293700CCE1E1 /* PrescriptionTableViewCell.swift in Sources */,
+				4AFBDBAC1D7D31AD00EDD984 /* MedicalMinderView.swift in Sources */,
+				4A72707C1D62DAA800F9A457 /* AppDelegate.swift in Sources */,
+				4A8A163B1E51732E00EBD13A /* PrescriptionDetailViewController.swift in Sources */,
+				4A7270BB1D65716F00F9A457 /* Prescription.swift in Sources */,
+				4A7270B71D65714E00F9A457 /* BloodPressure.swift in Sources */,
+				4A7270B21D656BC800F9A457 /* CoreDataStackManager.swift in Sources */,
+				4A7270841D62DAA800F9A457 /* MedicalMinderModel.xcdatamodeld in Sources */,
+				4A2E8BF11D890FDE00258B87 /* PrescriptionsTableViewController.swift in Sources */,
+				4A722C6B1E33037F0090AAFD /* WebConnectionClient.swift in Sources */,
+				4A7270BD1D6577AD00F9A457 /* MedicMinderConstants.swift in Sources */,
+				4AE632661E45C08200FB85D1 /* UserInformationViewController.swift in Sources */,
+				4A5819EF1DB289A300C3941D /* NewBloodPressureViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A72708B1D62DAA900F9A457 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A7270941D62DAA900F9A457 /* MedicalMinder3Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A7270961D62DAA900F9A457 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A72709F1D62DAA900F9A457 /* MedicalMinder3UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4A7270911D62DAA900F9A457 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A7270771D62DAA800F9A457 /* MedicalMinder3 */;
+			targetProxy = 4A7270901D62DAA900F9A457 /* PBXContainerItemProxy */;
+		};
+		4A72709C1D62DAA900F9A457 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A7270771D62DAA800F9A457 /* MedicalMinder3 */;
+			targetProxy = 4A72709B1D62DAA900F9A457 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4A72707F1D62DAA800F9A457 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A7270801D62DAA800F9A457 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4A7270871D62DAA800F9A457 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A7270881D62DAA800F9A457 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4A7270A11D62DAA900F9A457 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4A7270A21D62DAA900F9A457 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4A7270A41D62DAA900F9A457 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MedicalMinder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MaMyTy.MedicalMinder3;
+				PRODUCT_NAME = MedicalMinder3;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		4A7270A51D62DAA900F9A457 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MedicalMinder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MaMyTy.MedicalMinder3;
+				PRODUCT_NAME = MedicalMinder3;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		4A7270A71D62DAA900F9A457 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MedicalMinderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MaMyTy.MedicalMinderTests;
+				PRODUCT_NAME = MedicalMinder3;
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MedicalMinder3.app/MedicalMinder3";
+			};
+			name = Debug;
+		};
+		4A7270A81D62DAA900F9A457 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MedicalMinderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MaMyTy.MedicalMinderTests;
+				PRODUCT_NAME = MedicalMinder3;
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MedicalMinder3.app/MedicalMinder3";
+			};
+			name = Release;
+		};
+		4A7270AA1D62DAA900F9A457 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MedicalMinderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MaMyTy.MedicalMinderUITests;
+				PRODUCT_NAME = MedicalMinder3;
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MedicalMinder;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		4A7270AB1D62DAA900F9A457 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MedicalMinderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MaMyTy.MedicalMinderUITests;
+				PRODUCT_NAME = MedicalMinder3;
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MedicalMinder;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4A7270731D62DAA800F9A457 /* Build configuration list for PBXProject "MedicalMinder3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A7270A11D62DAA900F9A457 /* Debug */,
+				4A7270A21D62DAA900F9A457 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A7270A31D62DAA900F9A457 /* Build configuration list for PBXNativeTarget "MedicalMinder3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A7270A41D62DAA900F9A457 /* Debug */,
+				4A7270A51D62DAA900F9A457 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A7270A61D62DAA900F9A457 /* Build configuration list for PBXNativeTarget "MedicalMinder3Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A7270A71D62DAA900F9A457 /* Debug */,
+				4A7270A81D62DAA900F9A457 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A7270A91D62DAA900F9A457 /* Build configuration list for PBXNativeTarget "MedicalMinder3UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A7270AA1D62DAA900F9A457 /* Debug */,
+				4A7270AB1D62DAA900F9A457 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4A7270821D62DAA800F9A457 /* MedicalMinderModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4A7270831D62DAA800F9A457 /* MedicalMinderModel.xcdatamodel */,
+			);
+			currentVersion = 4A7270831D62DAA800F9A457 /* MedicalMinderModel.xcdatamodel */;
+			path = MedicalMinderModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4A7270701D62DAA800F9A457 /* Project object */;
+}

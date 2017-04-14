@@ -1,0 +1,14 @@
+Medical Minder
+
+The purpose of this application is allow a user to store their blood pressure readings, and their current medical prescriptions.  Also, there is another window to show the overview information for the medicines they are taking.  This overview information is retrieved from https://api.fda.gov/drug/ when the prescription is entered and saved.
+The current prescriptions and blood pressure readings are listed in table views.
+
+User Information
+The user can enter information about themselves including name, date of birth, blood type, in-case-of-emergency contact phone number, and name of the primary physician.
+Optionally, the user can add a photo of themselves to this page.
+
+Blood Pressure Readings
+The user can also enter their blood pressure readings (systolic and diastolic values) along with the date time from when they were taken.
+
+Prescriptions
+The information for the prescription includes the dosage and how often it is taken - every 'X' hours and number of times per day to take'.Users will be able to delete entered prescriptions.

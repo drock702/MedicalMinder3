@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="14F1713" minimumToolsVersion="Automatic">
+    <entity name="BloodPressure" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="diastolic" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="systolic" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="patient" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Patient" inverseName="bloodpressures" inverseEntity="Patient" syncable="YES"/>
+    </entity>
+    <entity name="Doctor" syncable="YES">
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="patients" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Patient" inverseName="doctors" inverseEntity="Patient" syncable="YES"/>
+        <relationship name="perscriptions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Perscription" inverseName="doctors" inverseEntity="Perscription" syncable="YES"/>
+    </entity>
+    <entity name="Patient" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="bloodType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="emergencyName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="emergencyNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="bloodpressures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BloodPressure" inverseName="patient" inverseEntity="BloodPressure" syncable="YES"/>
+        <relationship name="doctors" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Doctor" inverseName="patients" inverseEntity="Doctor" syncable="YES"/>
+        <relationship name="perscriptions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Perscription" inverseName="patients" inverseEntity="Perscription" syncable="YES"/>
+    </entity>
+    <entity name="Perscription" syncable="YES">
+        <attribute name="dosageNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="dosageTime" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="dosageUnits" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="doctors" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Doctor" inverseName="perscriptions" inverseEntity="Doctor" syncable="YES"/>
+        <relationship name="patients" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Patient" inverseName="perscriptions" inverseEntity="Patient" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Patient" positionX="-63" positionY="-18" width="128" height="180"/>
+        <element name="Doctor" positionX="-54" positionY="27" width="128" height="120"/>
+        <element name="Perscription" positionX="-45" positionY="72" width="128" height="165"/>
+        <element name="BloodPressure" positionX="-27" positionY="126" width="128" height="105"/>
+    </elements>
+</model>

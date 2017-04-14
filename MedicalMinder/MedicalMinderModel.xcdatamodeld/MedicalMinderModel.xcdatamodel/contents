@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="14F2009" minimumToolsVersion="Xcode 7.0">
+    <entity name="BloodPressure" representedClassName=".BloodPressure" syncable="YES">
+        <attribute name="dateTaken" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="diastolic" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="systolic" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="patient" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="bloodPressures" inverseEntity="UserInfo" syncable="YES"/>
+    </entity>
+    <entity name="Prescription" representedClassName=".Prescription" syncable="YES">
+        <attribute name="doctor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dosageFrequency" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="dosageNumber" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="dosagePerDay" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="dosageUnits" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="overview" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="patient" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="prescriptions" inverseEntity="UserInfo" syncable="YES"/>
+    </entity>
+    <entity name="UserInfo" representedClassName=".UserInfo" syncable="YES">
+        <attribute name="birthdate" attributeType="Date" syncable="YES"/>
+        <attribute name="blood_type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="doctor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ice_contact" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="bloodPressures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BloodPressure" inverseName="patient" inverseEntity="BloodPressure" syncable="YES"/>
+        <relationship name="prescriptions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Prescription" inverseName="patient" inverseEntity="Prescription" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="BloodPressure" positionX="-63" positionY="36" width="128" height="105"/>
+        <element name="Prescription" positionX="-63" positionY="-18" width="128" height="180"/>
+        <element name="UserInfo" positionX="-63" positionY="36" width="128" height="150"/>
+    </elements>
+</model>
